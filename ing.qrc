@@ -1,0 +1,5 @@
+<RCC>
+  <qresource prefix="ctt">
+    <file>Imagenes/Logo Mapa.png</file>
+  </qresource>
+</RCC>
