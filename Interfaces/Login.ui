@@ -35,7 +35,7 @@
     <property name="frameShadow">
      <enum>QFrame::Raised</enum>
     </property>
-    <widget class="QLabel" name="label">
+    <widget class="QLabel" name="lb_FtLogin">
      <property name="geometry">
       <rect>
        <x>170</x>
@@ -70,7 +70,7 @@ font: 57 20pt &quot;Ubuntu&quot;;</string>
       <string>Nombre:</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton">
+    <widget class="QPushButton" name="bt_Entrar">
      <property name="geometry">
       <rect>
        <x>160</x>
@@ -86,17 +86,18 @@ font: 57 20pt &quot;Ubuntu&quot;;</string>
       <string>Entrar</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit">
+    <widget class="QLineEdit" name="line_Username">
      <property name="geometry">
       <rect>
        <x>60</x>
        <y>210</y>
        <width>361</width>
-       <height>25</height>
+       <height>31</height>
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color: rgb(255, 255, 255);</string>
+      <string notr="true">background-color: rgb(255, 255, 255);
+font: 18pt &quot;MS Shell Dlg 2&quot;;</string>
      </property>
      <property name="text">
       <string/>
@@ -119,7 +120,7 @@ font: 57 20pt &quot;Ubuntu&quot;;</string>
       <string>Clave:</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit_2">
+    <widget class="QLineEdit" name="line_Password">
      <property name="geometry">
       <rect>
        <x>60</x>
@@ -129,7 +130,8 @@ font: 57 20pt &quot;Ubuntu&quot;;</string>
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color: rgb(255, 255, 255);</string>
+      <string notr="true">background-color: rgb(255, 255, 255);
+font: 18pt &quot;MS Shell Dlg 2&quot;;</string>
      </property>
      <property name="text">
       <string/>
@@ -143,7 +145,7 @@ font: 57 20pt &quot;Ubuntu&quot;;</string>
      <x>0</x>
      <y>0</y>
      <width>698</width>
-     <height>22</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>

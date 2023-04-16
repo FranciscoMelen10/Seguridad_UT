@@ -1,0 +1,53 @@
+Estructura de formularios
+
+
+1)Login:
+
+Line: 
+- line_Username
+- line_Password
+
+Botones:
+- bt_Entrar
+
+Labels:
+lb_FtLogin
+
+
+2)Ventana Principal (Contiene un tabWidget):
+
+I)Usuario:
+
+Line:
+- line_Id_Usuario (Enabled)
+- line_Nombre
+- line_Apellido
+- line_Password
+- line_Fecha
+
+Tabla Widget:
+- tb_Usuario
+
+II)Rol:
+
+Line:
+- line_Id_Rol (Enabled)
+- line_Rol
+- line_Rol_Descripcion
+
+Tabla Widget:
+- tb_Rol
+
+
+III)Opciones:
+
+Line:
+- line_Id_Opciones (Enabled)
+- line_Opciones
+- line_Opciones_Descripcion
+
+
+Tabla Widget:
+- tb_Opciones
+
+
