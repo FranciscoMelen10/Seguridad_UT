@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>696</width>
+    <width>699</width>
     <height>588</height>
    </rect>
   </property>
@@ -201,7 +201,7 @@ color: rgb(255, 255, 255);</string>
        <string notr="true">background-color: rgb(165, 215, 232);</string>
       </property>
       <property name="text">
-       <string>Guardar</string>
+       <string>Crear</string>
       </property>
      </widget>
      <widget class="QPushButton" name="bt_Editar_Usuario">
@@ -385,7 +385,7 @@ color: rgb(255, 255, 255);</string>
        <string notr="true">background-color: rgb(165, 215, 232);</string>
       </property>
       <property name="text">
-       <string>Guardar</string>
+       <string>Crear</string>
       </property>
      </widget>
      <widget class="QPushButton" name="bt_Editar_Rol">
@@ -587,7 +587,7 @@ color: rgb(255, 255, 255);</string>
        <string notr="true">background-color: rgb(165, 215, 232);</string>
       </property>
       <property name="text">
-       <string>Guardar</string>
+       <string>Crear</string>
       </property>
      </widget>
      <widget class="QPushButton" name="bt_Editar_Opcion">

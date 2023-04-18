@@ -18,8 +18,8 @@ class Form_Principal(QtWidgets.QMainWindow):
 
         #Botones de Usuario
         self.bt_Guardar_Usuario.clicked.connect(self.guardarUsuario)
-        #self.bt_Editar_Usuario.clicked.connect(self.editarUsuario)
-        #self.bt_Eliminar_Usuario.clicked.connect(self.eliminiarUsuario)
+        self.bt_Editar_Usuario.clicked.connect(self.editarUsuario)
+        self.bt_Eliminar_Usuario.clicked.connect(self.eliminarUsuario)
         self.bt_Vaciar_Usuario.clicked.connect(self.limpiarCampos)
 
         '''#Botones de Rol
@@ -40,6 +40,8 @@ class Form_Principal(QtWidgets.QMainWindow):
         self.llenarTablaUsuario(dt_Usuario.Dt_Usuarios.listarUsuarios())
         self.tb_Usuario.itemSelectionChanged.connect(self.obtenerDatosTablaUsuario)
 
+
+
     '''***********************************************  Funciones reutilizables   ******************************************'''
 
     def limpiarCampos(self):
@@ -57,12 +59,15 @@ class Form_Principal(QtWidgets.QMainWindow):
         self.line_Opciones.clear()
         self.line_Opciones_Descripcion.clear()'''
 
-    def notifMensaje(self, indicador, resultado):
-        if indicador == 1:
-            QMessageBox.about(self, "Registrado", "Datos " + resultado + " Correctamente")
-        else:
-            QMessageBox.about(self, "Error", "Error de registros de datos")
 
+
+    def notifMensaje(self, indicador, resultado):
+
+        if indicador == 1: #Se hizo correctamente la consulta a la base de datos
+            QMessageBox.about(self, "Registrado", "Datos " + resultado + " Correctamente")
+
+        else:#No se hizo correctamente la consulta a la base de datos
+            QMessageBox.about(self, "Error", "Error De Registros De Datos")
 
 
 
@@ -70,31 +75,71 @@ class Form_Principal(QtWidgets.QMainWindow):
 
     def guardarUsuario(self):
 
-
         try:
-            # Tramsformar la fecha en formato "yyyy-MM-dd"
-            #fechaTransformada = QDate.fromString(self.line_Usuario_Fecha.text(), '%d/%m/%Y')
-
+            #Transformar fecha en formato "yyyy-MM-dd" para hacer la consulta al sql
             fecha = self.line_Usuario_Fecha.text()
             fecha_objeto = datetime.strptime(fecha, "%d/%m/%Y")
             fechaTransformada = fecha_objeto.strftime("%Y-%m-%d")
 
-            print(fecha)
+            if self.line_Usuario_Id.text()== "" and not self.line_Usuario_Nombre.text()== "" and not self.line_Usuario_Apellido.text()== "" and not self.line_Usuario_User.text()== "" and not self.line_Usuario_Password.text()== "" and not self.line_Usuario_Fecha.text()== "":
 
+                dt_Usuario.Dt_Usuarios.guardarUsuario(self.line_Usuario_Nombre.text(),self.line_Usuario_Apellido.text(),self.line_Usuario_User.text(),self.line_Usuario_Password.text(), fechaTransformada)  # Recoge los datos en los "Lines" de Qt Desinger para editarlos en la base de datos
 
-            print(fechaTransformada)
-
-            if not self.line_Usuario_Nombre.text()== "" and not self.line_Usuario_Apellido.text()== "" and not self.line_Usuario_User.text()== "" and not self.line_Usuario_Password.text()== "" and not self.line_Usuario_Fecha.text()== "":
-                self.indicador = 1  # Se coloca el 1 como modificador a la hora de entrar a la función de Notificación, en donde asegura que el usuario ingreso los datos correctamente
-
-                dt_Usuario.Dt_Usuarios.guardarUsuario(self.line_Usuario_Nombre.text(),self.line_Usuario_Apellido.text(),self.line_Usuario_User.text(),self.line_Usuario_Password.text(), fechaTransformada)  # Recoge los datos en los "Lines" de Qt Desinger para guardarlos en la base de datos
-
-                self.notifMensaje(self.indicador,"guardados")  # Se pasa por parametro el indicador que en este caso vale "1" y el resultado es que se guardo correctamente en la base de datos
+                self.notifMensaje(1,"Guardados")  # Se pasa por parametro el indicador que en este caso vale "1" y el resultado es que se guardo correctamente en la base de datos
 
                 self.limpiarCampos()
 
                 self.llenarTablaUsuario(dt_Usuario.Dt_Usuarios.listarUsuarios())  # Se reinicia la tabla para poder recargar los datos guardados
 
+            else:
+
+                self.notifMensaje(0, "")
+
+        except Exception as e:
+            print(f"Error: {e}")
+
+
+
+    def editarUsuario(self):
+
+        try:
+
+            #Transformar fecha en formato "yyyy-MM-dd" para hacer la consulta al sql
+            fecha = self.line_Usuario_Fecha.text()
+            fecha_objeto = datetime.strptime(fecha, "%d/%m/%Y")
+            fechaTransformada = fecha_objeto.strftime("%Y-%m-%d")
+
+            if not self.line_Usuario_Id.text()== "" and not self.line_Usuario_Nombre.text()== "" and not self.line_Usuario_Apellido.text()== "" and not self.line_Usuario_User.text()== "" and not self.line_Usuario_Password.text()== "" and not self.line_Usuario_Fecha.text()== "":
+
+                dt_Usuario.Dt_Usuarios.editarUsuario(self.line_Usuario_Id.text(),self.line_Usuario_Nombre.text(),self.line_Usuario_Apellido.text(),self.line_Usuario_User.text(),self.line_Usuario_Password.text(), fechaTransformada)  # Recoge los datos en los "Lines" de Qt Desinger para editarlos en la base de datos
+
+                self.notifMensaje(1,"Editados")  # Se pasa por parametro el indicador que en este caso vale "1" y el resultado es que se guardo correctamente en la base de datos
+
+                self.limpiarCampos()
+
+                self.llenarTablaUsuario(dt_Usuario.Dt_Usuarios.listarUsuarios())  # Se reinicia la tabla para poder recargar los datos guardados
+
+            else:
+
+                self.notifMensaje(0, "")
+
+        except Exception as e:
+            print(f"Error: {e}")
+
+
+    def eliminarUsuario(self):
+
+        try:
+
+            if not self.line_Usuario_Id.text()== "" and not self.line_Usuario_Nombre.text()== "" and not self.line_Usuario_Apellido.text()== "" and not self.line_Usuario_User.text()== "" and not self.line_Usuario_Password.text()== "" and not self.line_Usuario_Fecha.text()== "":
+
+                dt_Usuario.Dt_Usuarios.eliminarUsuario(self.line_Usuario_Id.text())
+
+                self.notifMensaje(1,"Eliminados")  # Se pasa por parametro el indicador que en este caso vale "1" y el resultado es que se guardo correctamente en la base de datos
+
+                self.limpiarCampos()
+
+                self.llenarTablaUsuario(dt_Usuario.Dt_Usuarios.listarUsuarios())  # Se reinicia la tabla para poder recargar los datos guardados
             else:
 
                 self.notifMensaje(0, "")
