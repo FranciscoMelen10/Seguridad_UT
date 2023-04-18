@@ -19,11 +19,18 @@ lb_FtLogin
 I)Usuario:
 
 Line:
-- line_Id_Usuario (Enabled)
-- line_Nombre
-- line_Apellido
-- line_Password
-- line_Fecha
+- line_Usuario_Id (Enabled)
+- line_Usuario_Nombre
+- line_Usuario_Apellido
+- line_Usuario_User
+- line_Usuario_Password
+- line_Usuario_Fecha
+
+Botones:
+- bt_Guardar_Usuario
+- bt_Editar_Usuario
+- bt_Eliminar_Usuario
+- bt_Vaciar_Usuario
 
 Tabla Widget:
 - tb_Usuario
@@ -31,9 +38,15 @@ Tabla Widget:
 II)Rol:
 
 Line:
-- line_Id_Rol (Enabled)
+- line_Rol_Id (Enabled)
 - line_Rol
 - line_Rol_Descripcion
+
+Botones:
+- bt_Guardar_Rol
+- bt_Editar_Rol
+- bt_Eliminar_Rol
+- bt_Vaciar_Rol
 
 Tabla Widget:
 - tb_Rol
@@ -42,12 +55,17 @@ Tabla Widget:
 III)Opciones:
 
 Line:
-- line_Id_Opciones (Enabled)
+- line_Opciones_Id (Enabled)
 - line_Opciones
 - line_Opciones_Descripcion
 
+Botones:
+- bt_Guardar_Opcion
+- bt_Editar_Opcion
+- bt_Eliminar_Opcion
+- bt_Vaciar_Opcion
 
 Tabla Widget:
-- tb_Opciones
+- tb_Opcion
 
 

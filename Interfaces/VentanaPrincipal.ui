@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>674</width>
-    <height>587</height>
+    <width>696</width>
+    <height>588</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -22,7 +22,7 @@
      <rect>
       <x>0</x>
       <y>0</y>
-      <width>781</width>
+      <width>701</width>
       <height>591</height>
      </rect>
     </property>
@@ -47,7 +47,7 @@
        <rect>
         <x>10</x>
         <y>310</y>
-        <width>651</width>
+        <width>671</width>
         <height>241</height>
        </rect>
       </property>
@@ -64,7 +64,7 @@
        <enum>QAbstractScrollArea::AdjustToContents</enum>
       </property>
       <attribute name="horizontalHeaderDefaultSectionSize">
-       <number>107</number>
+       <number>111</number>
       </attribute>
       <attribute name="verticalHeaderDefaultSectionSize">
        <number>25</number>
@@ -151,7 +151,7 @@ color: rgb(255, 255, 255);</string>
 color: rgb(255, 255, 255);</string>
       </property>
       <property name="text">
-       <string>User:</string>
+       <string>Username:</string>
       </property>
      </widget>
      <widget class="QLabel" name="label_4">
@@ -188,7 +188,7 @@ color: rgb(255, 255, 255);</string>
        <string>Fecha de Creación:</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton">
+     <widget class="QPushButton" name="bt_Guardar_Usuario">
       <property name="geometry">
        <rect>
         <x>510</x>
@@ -204,7 +204,7 @@ color: rgb(255, 255, 255);</string>
        <string>Guardar</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_2">
+     <widget class="QPushButton" name="bt_Editar_Usuario">
       <property name="geometry">
        <rect>
         <x>510</x>
@@ -220,7 +220,7 @@ color: rgb(255, 255, 255);</string>
        <string>Editar</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_3">
+     <widget class="QPushButton" name="bt_Eliminar_Usuario">
       <property name="geometry">
        <rect>
         <x>510</x>
@@ -236,7 +236,7 @@ color: rgb(255, 255, 255);</string>
        <string>Eliminar</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_4">
+     <widget class="QPushButton" name="bt_Vaciar_Usuario">
       <property name="geometry">
        <rect>
         <x>510</x>
@@ -252,7 +252,7 @@ color: rgb(255, 255, 255);</string>
        <string>Vaciar Campos</string>
       </property>
      </widget>
-     <widget class="QLineEdit" name="line_Nombre">
+     <widget class="QLineEdit" name="line_Usuario_Nombre">
       <property name="geometry">
        <rect>
         <x>110</x>
@@ -265,7 +265,7 @@ color: rgb(255, 255, 255);</string>
        <string notr="true">background-color: rgb(246, 245, 244);</string>
       </property>
      </widget>
-     <widget class="QLineEdit" name="line_Apellido">
+     <widget class="QLineEdit" name="line_Usuario_Apellido">
       <property name="geometry">
        <rect>
         <x>110</x>
@@ -278,7 +278,7 @@ color: rgb(255, 255, 255);</string>
        <string notr="true">background-color: rgb(246, 245, 244);</string>
       </property>
      </widget>
-     <widget class="QLineEdit" name="line_User">
+     <widget class="QLineEdit" name="line_Usuario_User">
       <property name="geometry">
        <rect>
         <x>110</x>
@@ -291,7 +291,7 @@ color: rgb(255, 255, 255);</string>
        <string notr="true">background-color: rgb(246, 245, 244);</string>
       </property>
      </widget>
-     <widget class="QLineEdit" name="line_Password">
+     <widget class="QLineEdit" name="line_Usuario_Password">
       <property name="geometry">
        <rect>
         <x>130</x>
@@ -304,7 +304,7 @@ color: rgb(255, 255, 255);</string>
        <string notr="true">background-color: rgb(246, 245, 244);</string>
       </property>
      </widget>
-     <widget class="QDateEdit" name="line_Fecha">
+     <widget class="QDateEdit" name="line_Usuario_Fecha">
       <property name="geometry">
        <rect>
         <x>190</x>
@@ -334,7 +334,7 @@ color: rgb(255, 255, 255);</string>
        <string>ID:</string>
       </property>
      </widget>
-     <widget class="QLineEdit" name="line_Id_Usuario">
+     <widget class="QLineEdit" name="line_Usuario_Id">
       <property name="enabled">
        <bool>false</bool>
       </property>
@@ -372,7 +372,7 @@ color: rgb(255, 255, 255);</string>
        <string>Descripción:</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_5">
+     <widget class="QPushButton" name="bt_Guardar_Rol">
       <property name="geometry">
        <rect>
         <x>500</x>
@@ -388,7 +388,7 @@ color: rgb(255, 255, 255);</string>
        <string>Guardar</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_6">
+     <widget class="QPushButton" name="bt_Editar_Rol">
       <property name="geometry">
        <rect>
         <x>500</x>
@@ -404,7 +404,7 @@ color: rgb(255, 255, 255);</string>
        <string>Editar</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_7">
+     <widget class="QPushButton" name="bt_Eliminar_Rol">
       <property name="geometry">
        <rect>
         <x>500</x>
@@ -420,7 +420,7 @@ color: rgb(255, 255, 255);</string>
        <string>Eliminar</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_8">
+     <widget class="QPushButton" name="bt_Vaciar_Rol">
       <property name="geometry">
        <rect>
         <x>500</x>
@@ -536,7 +536,7 @@ color: rgb(255, 255, 255);</string>
        <string notr="true">background-color: rgb(246, 245, 244);</string>
       </property>
      </widget>
-     <widget class="QLineEdit" name="line_Id_Rol">
+     <widget class="QLineEdit" name="line_Rol_Id">
       <property name="enabled">
        <bool>false</bool>
       </property>
@@ -574,7 +574,7 @@ color: rgb(255, 255, 255);</string>
        <string>Descripción:</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_9">
+     <widget class="QPushButton" name="bt_Guardar_Opcion">
       <property name="geometry">
        <rect>
         <x>490</x>
@@ -590,7 +590,7 @@ color: rgb(255, 255, 255);</string>
        <string>Guardar</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_10">
+     <widget class="QPushButton" name="bt_Editar_Opcion">
       <property name="geometry">
        <rect>
         <x>490</x>
@@ -606,7 +606,7 @@ color: rgb(255, 255, 255);</string>
        <string>Editar</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_11">
+     <widget class="QPushButton" name="bt_Eliminar_Opcion">
       <property name="geometry">
        <rect>
         <x>490</x>
@@ -622,7 +622,7 @@ color: rgb(255, 255, 255);</string>
        <string>Eliminar</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_12">
+     <widget class="QPushButton" name="bt_Vaciar_Opcion">
       <property name="geometry">
        <rect>
         <x>490</x>
@@ -651,7 +651,7 @@ color: rgb(255, 255, 255);</string>
        <string notr="true">background-color: rgb(255, 255, 255);</string>
       </property>
      </widget>
-     <widget class="QTableWidget" name="tb_Opciones">
+     <widget class="QTableWidget" name="tb_Opcion">
       <property name="geometry">
        <rect>
         <x>30</x>
@@ -708,7 +708,7 @@ color: rgb(255, 255, 255);</string>
        <string>Opciones:</string>
       </property>
      </widget>
-     <widget class="QLineEdit" name="line_opciones">
+     <widget class="QLineEdit" name="line_Opciones">
       <property name="geometry">
        <rect>
         <x>160</x>
@@ -738,7 +738,7 @@ color: rgb(255, 255, 255);</string>
        <string>ID:</string>
       </property>
      </widget>
-     <widget class="QLineEdit" name="line_ID_opciones">
+     <widget class="QLineEdit" name="line_Id_Opciones">
       <property name="enabled">
        <bool>false</bool>
       </property>
