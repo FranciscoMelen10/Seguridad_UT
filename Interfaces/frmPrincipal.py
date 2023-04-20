@@ -6,7 +6,7 @@ from PyQt5.QtCore import QDate
 from PyQt5.QtWidgets import QTableWidgetItem, QMessageBox
 from PyQt5.uic import loadUi
 
-from Datos import dt_Usuario, dt_Rol
+from Datos import dt_Usuario, dt_Rol, dt_Opcion
 
 
 class Form_Principal(QtWidgets.QMainWindow):
@@ -28,13 +28,14 @@ class Form_Principal(QtWidgets.QMainWindow):
         self.bt_Eliminar_Rol.clicked.connect(self.eliminarRol)
         self.bt_Vaciar_Rol.clicked.connect(self.limpiarCampos)
 
-        '''#Botones de Opcion
+        #Botones de Opcion
         self.bt_Guardar_Opcion.clicked.connect(self.guardarOpcion)
         self.bt_Editar_Opcion.clicked.connect(self.editarOpcion)
-        self.bt_Eliminar_Opcion.clicked.connect(self.eliminiarOpcion)
-        self.bt_Vaciar_Opcion.clicked.connect(self.limpiarCampos)'''
+        self.bt_Eliminar_Opcion.clicked.connect(self.eliminarOpcion)
+        self.bt_Vaciar_Opcion.clicked.connect(self.limpiarCampos)
 
-        #Acciones de tabla
+
+        #Acciones de las tablas
 
         #Usuarios
         self.llenarTablaUsuario(dt_Usuario.Dt_Usuarios.listarUsuarios())
@@ -44,21 +45,30 @@ class Form_Principal(QtWidgets.QMainWindow):
         self.llenarTablaRol(dt_Rol.Dt_Rol.listarRol())
         self.tb_Rol.itemSelectionChanged.connect(self.obtenerDatosTablaRol)
 
+        # Opciones
+        self.llenarTablaOpcion(dt_Opcion.Dt_Opcion.listarOpcion())
+        self.tb_Opcion.itemSelectionChanged.connect(self.obtenerDatosTablaOpcion)
+
+
     '''***********************************************  Funciones reutilizables   ******************************************'''
+
 
     def limpiarCampos(self):
 
+        #Usuario
         self.line_Usuario_Id.clear()
         self.line_Usuario_Nombre.clear()
         self.line_Usuario_Apellido.clear()
         self.line_Usuario_User.clear()
         self.line_Usuario_Password.clear()
+
+        #Rol
         self.line_Rol_Id.clear()
         self.line_Rol.clear()
 
-
-        '''self.line_Opciones_Id.clear()
-        self.line_Opciones.clear()'''
+        #Opcion
+        self.line_Opciones_Id.clear()
+        self.line_Opciones.clear()
 
 
 
@@ -69,7 +79,6 @@ class Form_Principal(QtWidgets.QMainWindow):
 
         else:#No se hizo correctamente la consulta a la base de datos
             QMessageBox.about(self, "Error", "Error De Registros De Datos")
-
 
 
         '''***********************************************  Usuario   ******************************************'''
@@ -95,6 +104,7 @@ class Form_Principal(QtWidgets.QMainWindow):
             else:
 
                 self.notifMensaje(False, "")
+
 
         except Exception as e:
             print(f"Error: {e}")
@@ -129,6 +139,7 @@ class Form_Principal(QtWidgets.QMainWindow):
             print(f"Error: {e}")
 
 
+
     def eliminarUsuario(self):
 
         try:
@@ -150,6 +161,7 @@ class Form_Principal(QtWidgets.QMainWindow):
 
         except Exception as e:
             print(f"Error: {e}")
+
 
 
     def obtenerDatosTablaUsuario(self):
@@ -175,7 +187,9 @@ class Form_Principal(QtWidgets.QMainWindow):
         self.line_Usuario_Fecha.setDate(fechaTransformada)
 
 
+
     def llenarTablaUsuario(self, datos):
+
         print("Datos de la Tablas Usuarios")
         i = len(datos)
         self.tb_Usuario.setRowCount(i)
@@ -193,7 +207,9 @@ class Form_Principal(QtWidgets.QMainWindow):
             tablerow = tablerow + 1
 
 
+
         '''******************************************  Rol   ******************************************'''
+
 
     def guardarRol(self):
 
@@ -280,6 +296,7 @@ class Form_Principal(QtWidgets.QMainWindow):
 
 
     def llenarTablaRol(self, datos):
+
         print("Datos de la Tabla rol")
         i = len(datos)
         self.tb_Rol.setRowCount(i)
@@ -293,13 +310,106 @@ class Form_Principal(QtWidgets.QMainWindow):
 
         '''******************************************  Opcion   ******************************************'''
 
+    def guardarOpcion(self):
+
+        try:
+
+            if not self.line_Opcion.text() == "":
+
+                indicador = dt_Opcion.Dt_Opcion.guardarOpcion(self.line_Opcion.text())
+
+                self.notifMensaje(indicador, "Guardados")
+
+                self.limpiarCampos()
+
+                self.llenarTablaOpcion(dt_Opcion.Dt_Opcion.listarOpcion())  # Se reinicia la tabla para poder recargar los datos guardados
+
+            else:
+
+                self.notifMensaje(False, "")
+
+        except Exception as e:
+            print(f"Error: {e}")
 
 
 
+    def editarOpcion(self):
+
+        try:
+
+            if not self.line_Opcion_Id.text() == "" and not self.line_Opcion.text() == "":
+
+                indicador = dt_Opcion.Dt_Opcion.editarOpcion(self.line_Opcion_Id.text(), self.line_Opcion.text())
+
+                self.notifMensaje(indicador, "Editados")
+
+                self.limpiarCampos()
+
+                self.llenarTablaOpcion(dt_Opcion.Dt_Opcion.listarOpcion())  # Se reinicia la tabla para poder recargar los datos guardados
+
+            else:
+
+                self.notifMensaje(False, "")
+
+
+        except Exception as e:
+            print(f"Error: {e}")
+
+
+
+    def eliminarOpcion(self):
+
+        try:
+
+            if not self.line_Opcion_Id.text() == "" and not self.line_Opcion.text() == "":
+
+                indicador = dt_Opcion.Dt_Opcion.eliminarOpcion(self.line_Opcion_Id.text())
+
+                self.notifMensaje(indicador, "Eliminados")
+
+                self.limpiarCampos()
+
+                self.llenarTablaRol(dt_Opcion.Dt_Opcion.listarOpcion())  # Se reinicia la tabla para poder recargar los datos guardados
+
+            else:
+
+                self.notifMensaje(False, "")
+
+
+        except Exception as e:
+            print(f"Error: {e}")
+
+
+
+    def obtenerDatosTablaOpcion(self):
+
+        # Selecciona la fila de la tabla
+        filaSeleccionada = self.tb_Opcion.currentRow()
+        id = self.tb_Opcion.item(filaSeleccionada, 0).text()
+        opcion = self.tb_Opcion.item(filaSeleccionada, 1).text()
+
+        # Asigna el contenido de la tabla seleccionada a los Edits Lines Correspondientes
+        self.line_Opcion_Id.setText(id)
+        self.line_Opcion.setText(opcion)
+
+
+    def llenarTablaOpcion(self, datos):
+
+        print("Datos de la Tabla opcion")
+        i = len(datos)
+        self.tb_Opcion.setRowCount(i)
+        tablerow = 0
+
+        for row in datos:
+            print(row)
+            self.tb_Opcion.setItem(tablerow, 0, QTableWidgetItem(str(row["idopcion"])))
+            self.tb_Opcion.setItem(tablerow, 1, QTableWidgetItem((row["descripcion"])))
+            tablerow = tablerow + 1
 
 
 
         '''******************************************  Menu Principal   ******************************************'''
+
 
 
 if __name__ == '__main__':

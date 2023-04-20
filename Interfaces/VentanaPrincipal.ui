@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Principal</string>
   </property>
   <property name="styleSheet">
    <string notr="true">background-color: rgb(11, 36, 71);</string>
@@ -42,7 +42,7 @@
      <enum>QTabWidget::Rounded</enum>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>2</number>
     </property>
     <widget class="QWidget" name="Usuario">
      <attribute name="title">
@@ -651,7 +651,7 @@ color: rgb(255, 255, 255);</string>
        <string>Opcion:</string>
       </property>
      </widget>
-     <widget class="QLineEdit" name="line_Opciones">
+     <widget class="QLineEdit" name="line_Opcion">
       <property name="geometry">
        <rect>
         <x>110</x>
@@ -681,7 +681,7 @@ color: rgb(255, 255, 255);</string>
        <string>ID:</string>
       </property>
      </widget>
-     <widget class="QLineEdit" name="line_Id_Opciones">
+     <widget class="QLineEdit" name="line_Opcion_Id">
       <property name="enabled">
        <bool>false</bool>
       </property>
