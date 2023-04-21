@@ -1,4 +1,6 @@
+# Francisco de Jesús Melendez Simplina
 #Entidad Opcion
+
 
 class Opcion:
     def __init__(self,idOpcion, opcion, descripcionOpcion, estado):

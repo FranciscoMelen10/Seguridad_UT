@@ -42,7 +42,7 @@
      <enum>QTabWidget::Rounded</enum>
     </property>
     <property name="currentIndex">
-     <number>2</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="Usuario">
      <attribute name="title">
@@ -308,6 +308,9 @@ color: rgb(255, 255, 255);</string>
       </property>
       <property name="styleSheet">
        <string notr="true">background-color: rgb(246, 245, 244);</string>
+      </property>
+      <property name="echoMode">
+       <enum>QLineEdit::Password</enum>
       </property>
      </widget>
      <widget class="QDateEdit" name="line_Usuario_Fecha">

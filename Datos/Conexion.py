@@ -1,3 +1,5 @@
+# Francisco de Jesús Melendez Simplina
+
 import pymysql.cursors
 
 class Conexion:

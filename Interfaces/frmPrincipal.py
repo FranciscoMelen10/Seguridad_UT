@@ -1,3 +1,5 @@
+# Francisco de Jesús Melendez Simplina
+
 import sys
 from datetime import datetime
 
@@ -7,6 +9,9 @@ from PyQt5.QtWidgets import QTableWidgetItem, QMessageBox
 from PyQt5.uic import loadUi
 
 from Datos import dt_Usuario, dt_Rol, dt_Opcion
+
+
+# Indicador obtiende de las carpeta de las clases de Datos, un valor verdadero o falso para asi poder mostrar un mensaje de confirmación ya se ha guardar, editar o eliminar datos
 
 
 class Form_Principal(QtWidgets.QMainWindow):
@@ -55,20 +60,26 @@ class Form_Principal(QtWidgets.QMainWindow):
 
     def limpiarCampos(self):
 
-        #Usuario
-        self.line_Usuario_Id.clear()
-        self.line_Usuario_Nombre.clear()
-        self.line_Usuario_Apellido.clear()
-        self.line_Usuario_User.clear()
-        self.line_Usuario_Password.clear()
+        if not self.line_Usuario_Nombre.text() == "" or not self.line_Usuario_Apellido.text() == "" or not self.line_Usuario_User.text() == "" or not self.line_Usuario_Password.text() == "" :
+            print("Datos limpiados de la ventana Usuario")
+            self.line_Usuario_Id.clear()
+            self.line_Usuario_Nombre.clear()
+            self.line_Usuario_Apellido.clear()
+            self.line_Usuario_User.clear()
+            self.line_Usuario_Password.clear()
 
         #Rol
-        self.line_Rol_Id.clear()
-        self.line_Rol.clear()
+        if not self.line_Rol_Id.text() == "" or not self.line_Rol.text() == "":
+            print("Datos limpiados de la ventana Rol")
+            self.line_Rol_Id.clear()
+            self.line_Rol.clear()
 
         #Opcion
-        self.line_Opciones_Id.clear()
-        self.line_Opciones.clear()
+        if not self.line_Opcion_Id.text() == "" or not self.line_Opcion.text() == "":
+            print("Datos limpiados de la ventana Opcion")
+            self.line_Opcion_Id.clear()
+            self.line_Opcion.clear()
+
 
 
 
@@ -215,7 +226,7 @@ class Form_Principal(QtWidgets.QMainWindow):
 
         try:
 
-            if not self.line_Rol.text()== "":
+            if self.line_Rol_Id and not self.line_Rol.text()== "":
 
                 indicador = dt_Rol.Dt_Rol.guardarRol(self.line_Rol.text())
 
@@ -314,7 +325,7 @@ class Form_Principal(QtWidgets.QMainWindow):
 
         try:
 
-            if not self.line_Opcion.text() == "":
+            if self.line_Opcion_Id and not self.line_Opcion.text() == "":
 
                 indicador = dt_Opcion.Dt_Opcion.guardarOpcion(self.line_Opcion.text())
 
@@ -369,7 +380,7 @@ class Form_Principal(QtWidgets.QMainWindow):
 
                 self.limpiarCampos()
 
-                self.llenarTablaRol(dt_Opcion.Dt_Opcion.listarOpcion())  # Se reinicia la tabla para poder recargar los datos guardados
+                self.llenarTablaOpcion(dt_Opcion.Dt_Opcion.listarOpcion())  # Se reinicia la tabla para poder recargar los datos guardados
 
             else:
 
