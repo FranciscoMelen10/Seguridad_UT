@@ -3,17 +3,15 @@
 
 
 class Opcion:
-    def __init__(self,idOpcion, opcion, descripcionOpcion, estado):
+    def __init__(self,idOpcion, opcion, estado):
         self.idOpcion = idOpcion
         self.opcion = opcion
-        self.descripcionOpcion = descripcionOpcion
         self.estado = estado
 
     def __str__(self):
         return f'''
         idOpcion: {self.idOpcion}
         opcion: {self.opcion}
-        descripcionOpcion: {self.descripcionOpcion}
         estado: {self.estado}
         '''
 
@@ -32,14 +30,6 @@ class Opcion:
     @opcion.setter
     def opcion(self, opcion):
         self.rol = opcion
-
-    @property
-    def descripcionOpcion(self):
-        return self.descripcionOpcion
-
-    @descripcionOpcion.setter
-    def descripcionOpcion(self, descripcionOpcion):
-        self.descripcionOpcion = descripcionOpcion
 
     @property
     def estado(self):

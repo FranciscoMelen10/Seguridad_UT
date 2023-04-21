@@ -86,10 +86,10 @@ class Form_Principal(QtWidgets.QMainWindow):
     def notifMensaje(self, indicador, resultado):
 
         if indicador == True: #Se hizo correctamente la consulta a la base de datos
-            QMessageBox.about(self, "Registrado", "Datos " + resultado + " Correctamente")
+            QMessageBox.about(self, "Exito!", "Los Datos Fueron " + resultado + " Correctamente")
 
         else:#No se hizo correctamente la consulta a la base de datos
-            QMessageBox.about(self, "Error", "Error De Registros De Datos")
+            QMessageBox.about(self, "Error", "Ha Ocurrido un Error")
 
 
         '''***********************************************  Usuario   ******************************************'''
@@ -226,7 +226,7 @@ class Form_Principal(QtWidgets.QMainWindow):
 
         try:
 
-            if self.line_Rol_Id and not self.line_Rol.text()== "":
+            if self.line_Rol_Id.text() == "" and not self.line_Rol.text() == "":
 
                 indicador = dt_Rol.Dt_Rol.guardarRol(self.line_Rol.text())
 
@@ -249,7 +249,7 @@ class Form_Principal(QtWidgets.QMainWindow):
 
         try:
 
-            if not self.line_Rol_Id.text()== "" and not self.line_Rol.text()== "":
+            if not self.line_Rol_Id.text() == "" and not self.line_Rol.text() == "":
 
                 indicador = dt_Rol.Dt_Rol.editarRol(self.line_Rol_Id.text(),self.line_Rol.text())
 
@@ -273,7 +273,7 @@ class Form_Principal(QtWidgets.QMainWindow):
 
         try:
 
-            if not self.line_Rol_Id.text()== "" and not self.line_Rol.text()== "":
+            if not self.line_Rol_Id.text() == "" and not self.line_Rol.text() == "":
 
                 indicador = dt_Rol.Dt_Rol.eliminarRol(self.line_Rol_Id.text())
 
@@ -325,7 +325,7 @@ class Form_Principal(QtWidgets.QMainWindow):
 
         try:
 
-            if self.line_Opcion_Id and not self.line_Opcion.text() == "":
+            if self.line_Opcion_Id.text() == "" and not self.line_Opcion.text() == "":
 
                 indicador = dt_Opcion.Dt_Opcion.guardarOpcion(self.line_Opcion.text())
 

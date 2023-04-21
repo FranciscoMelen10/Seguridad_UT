@@ -27,7 +27,7 @@ class Usuarios:
         return self.idusuario
 
     @idusuario.setter
-    def idUsuario(self, idusuario):
+    def idusuario(self, idusuario):
         self.idusuario = idusuario
 
     @property

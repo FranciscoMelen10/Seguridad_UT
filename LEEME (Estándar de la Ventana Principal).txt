@@ -1,4 +1,4 @@
-Estructura de formularios
+Estructura de formularios 
 
 
 1)Login:
@@ -40,7 +40,6 @@ II)Rol:
 Line:
 - line_Rol_Id (Enabled)
 - line_Rol
-- line_Rol_Descripcion
 
 Botones:
 - bt_Guardar_Rol
@@ -55,9 +54,8 @@ Tabla Widget:
 III)Opciones:
 
 Line:
-- line_Opciones_Id (Enabled)
-- line_Opciones
-- line_Opciones_Descripcion
+- line_Opcion_Id (Enabled)
+- line_Opcion
 
 Botones:
 - bt_Guardar_Opcion
