@@ -1,9 +1,9 @@
 # Francisco de Jesús Melendez Simplina
-#Entidad Usuario
+#Entidad de Usuario
 
 class Usuarios:
-    def __init__(self,idusuario, nombre, apellido, user, password, fechaCreacion, estado):
-        self.idusuario = idusuario
+    def __init__(self,id_usuario, nombre, apellido, user, password, fechaCreacion, estado):
+        self.id_usuario = id_usuario
         self.nombre = nombre
         self.apellido = apellido
         self.user = user
@@ -13,7 +13,7 @@ class Usuarios:
 
     def __str__(self):
         return f'''
-        idusuario: {self.idusuario}
+        id_usuario: {self.id_usuario}
         nombre: {self.nombre}
         apellido: {self.apellido}
         user: {self.user}
@@ -23,12 +23,12 @@ class Usuarios:
         '''
 
     @property
-    def idusuario(self):
-        return self.idusuario
+    def id_usuario(self):
+        return self.id_usuario
 
-    @idusuario.setter
-    def idusuario(self, idusuario):
-        self.idusuario = idusuario
+    @id_usuario.setter
+    def id_usuario(self, id_usuario):
+        self.id_usuario = id_usuario
 
     @property
     def nombre(self):

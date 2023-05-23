@@ -1,0 +1,112 @@
+Estándar de la ventana Seguridad:
+
+Fondo:
+Colores del Background:
+HEX : #3f4964
+RGB : 63, 73, 100
+HSL  : 223, 22%, 31%
+
+
+
+Letra:
+- Tipo de letra: MS Shell Dlg 2 (Negrita)
+- Tamaño: 14
+
+
+1)Login:
+
+Line: 
+- line_Username
+- line_Password
+
+Botones:
+- bt_Entrar
+
+Labels:
+lb_FtLogin
+
+
+2)Ventana Principal (Contiene un tabWidget):
+
+I)Usuario:
+ 
+Line:
+- line_Usuario_Id (Enabled)
+- line_Usuario_Nombre
+- line_Usuario_Apellido
+- line_Usuario_User
+- line_Usuario_Password
+- line_Usuario_Fecha
+
+Botones:
+- bt_Guardar_Usuario
+- bt_Editar_Usuario
+- bt_Eliminar_Usuario
+- bt_Vaciar_Usuario
+
+Tabla Widget:
+- tb_Usuario
+
+II)Rol:
+
+Line:
+- line_Rol_Id (Enabled)
+- line_Rol
+
+Botones:
+- bt_Guardar_Rol
+- bt_Editar_Rol
+- bt_Eliminar_Rol
+- bt_Vaciar_Rol
+
+Tabla Widget:
+- tb_Rol
+
+
+III)Opciones:
+
+Line:
+- line_Opcion_Id (Enabled)
+- line_Opcion
+
+Botones:
+- bt_Guardar_Opcion
+- bt_Editar_Opcion
+- bt_Eliminar_Opcion
+- bt_Vaciar_Opcion
+
+Tabla Widget:
+- tb_Opcion
+
+
+IV)Asignar Rol
+
+Line:
+- line_Asignar_Rol_Id (Enabled)
+- cb_Asignar_Rol_idUsuario
+- cb_Asignar_Rol_idRol
+
+Botones:
+- bt_Eliminar_Asignar_Rol
+
+
+Tabla Widget: 
+- tb_Asignar_Rol
+
+
+V)Asignar Opcion
+
+Line:
+- line_Asignar_Opcion_Id (Enabled)
+- cb_Asignar_Opcion_idRol
+- cb_Asignar_Opcion_idOpcion
+
+
+Botones:
+- bt_Eliminar_Asignar_Opcion
+
+
+Tabla Widget: 
+- tb_Asignar_Opcion
+
+
